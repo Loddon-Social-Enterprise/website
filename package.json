@@ -1,0 +1,9 @@
+{
+  "name": "loddonse-website",
+  "version": "1.0.0",
+  "description": "Website for Loddon Social Enterprise",
+  "main": "index.js",
+  "repository": "git@github.com:Loddon-Social-Enterprise/website.git",
+  "author": "Ben Hodgson <work@benhodgson.net>",
+  "license": "MIT"
+}
