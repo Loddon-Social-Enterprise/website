@@ -1,5 +1,5 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
+import type { NextPage } from 'next';
+import Head from 'next/head';
 import React from 'react';
 
 const Home: NextPage = () => {
@@ -9,13 +9,11 @@ const Home: NextPage = () => {
         <title>Loddon Social Enterprise</title>
       </Head>
 
-      <main>
-        <h1>
-          Welcome to Loddon Social Enterprise
-        </h1>
+      <main className="p-5">
+        <h1 className="text-2xl text-center">Welcome to Loddon Social Enterprise</h1>
       </main>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
