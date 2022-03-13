@@ -7,7 +7,7 @@ on:
 
   repository_dispatch:
     types:
-      - publish-event
+      - contentful-publish
 
   workflow_dispatch:
 
