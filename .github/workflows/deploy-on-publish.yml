@@ -1,7 +1,10 @@
-name: Deploy on Contentful Publish
+name: Deploy (Contentful Publish)
+
 on:
-	repository_dispatch:
-    	types: [publish-event]
+  repository_dispatch:
+    types: [publish-event]
+
+  workflow_dispatch:
 
 jobs:
   deployment:
@@ -33,4 +36,3 @@ jobs:
         with:
           deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           publish_dir: ./out
-
