@@ -17,7 +17,7 @@ const WhatWeDo: NextPage<Props> = ({ content: { pageTitle, body } }) => {
         <title>{`${pageTitle} | Loddon Social Enterprise`}</title>
       </Head>
 
-      <section className={styles.privacyPolicy}>
+      <section className={styles.page}>
         {body && documentToReactComponents(body.json)}
       </section>
     </div>
