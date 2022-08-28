@@ -1,6 +1,7 @@
 @use 'src/styles/variables';
 
 .layoutWrapper {
+  position: relative;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -15,4 +16,13 @@
   margin-top: calc(variables.$base-spacing * 4);
   margin-bottom: calc(variables.$base-spacing * 2);
   padding: 0 calc(variables.$base-spacing * 2);
+}
+
+.smiles {
+  position: absolute;
+  z-index: 999;
+  top: 0;
+  right: 0;
+  width: 25%;
+  text-align: right;
 }
