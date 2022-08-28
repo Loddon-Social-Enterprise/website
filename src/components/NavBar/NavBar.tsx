@@ -18,7 +18,7 @@ const NavBar = () => {
     <nav className={styles.navBar}>
       <ul className={styles.inner}>
         {Object.entries(links).map(([title, href]) => (
-          <li className={classnames([styles.navItem, pathname.includes(href) && styles.currentNavItem])} key={href}>
+          <li className={classnames([styles.navItem, pathname.endsWith(href) && styles.currentNavItem])} key={href}>
             <Link href={href}>{title}</Link>
           </li>
         ))}
