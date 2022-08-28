@@ -1,6 +1,7 @@
-import { divIcon, LatLngLiteral } from 'leaflet';
+import { icon, LatLngLiteral } from 'leaflet';
 import React, { useEffect, useRef } from 'react';
 import { MapContainer, Marker, MarkerProps, Popup, TileLayer } from 'react-leaflet';
+import markerIcon from 'public/images/map-pointer.svg';
 import styles from './Map.module.scss';
 
 interface Props {
@@ -31,8 +32,10 @@ const Map = ({
   zoom = 14,
   className
 }: Props) => {
-  var marker = divIcon({
-    className: styles.marker,
+
+  var marker = icon({
+    iconUrl: markerIcon.src,
+    iconRetinaUrl: markerIcon.src,
     iconSize: [36, 66],
     iconAnchor: [18, 66],
     popupAnchor: [0, -66]
