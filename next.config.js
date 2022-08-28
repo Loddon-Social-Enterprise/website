@@ -7,5 +7,6 @@ module.exports = {
     path: '',
   },
   assetPrefix: isProd ? './' : '',
+  basePath: isProd ? '/website' : '',
   reactStrictMode: true
 };
