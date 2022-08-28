@@ -23,12 +23,17 @@ export const getHomepage = async (variables = null) => {
   return data.homepageCollection.items[0];
 };
 
-export const getWhatWeDoPage = async (variables = null) => {
+export const getGenericPage = async (slug: string, variables = null) => {
   const query = `query($preview: Boolean){
-    whatWeDoPageCollection(preview: $preview) {
+    pageCollection(
+      where: {
+        slug: "${slug}"
+      }
+      preview: $preview
+    ) {
       items {
         pageTitle
-        mainContentBody {
+        body {
           json
         }
       }
@@ -40,5 +45,5 @@ export const getWhatWeDoPage = async (variables = null) => {
     variables: {}
   });
 
-  return data.whatWeDoPageCollection.items[0];
+  return data.pageCollection.items[0];
 };

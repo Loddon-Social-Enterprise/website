@@ -1,0 +1,16 @@
+@use 'variables';
+
+h1 {
+  color: variables.$color-brand-blue;
+  font-size: 32px;
+}
+
+h1,
+p:not(:last-child) {
+  margin-bottom: calc(variables.$base-spacing * 2);
+}
+
+h2 {
+  margin-bottom: variables.$base-spacing;
+  font-size: 24px;
+}

@@ -12,6 +12,7 @@
 .inner {
   display: flex;
   flex-direction: row;
+  column-gap: calc(variables.$base-spacing * 2);
   width: 100%;
   max-width: variables.$max-page-width;
   padding: 0 calc(variables.$base-spacing * 2);
@@ -19,14 +20,14 @@
 
 .navItem {
   padding: variables.$base-spacing 0;
-
-  &:not(:last-of-type) {
-    margin-right: calc(variables.$base-spacing * 2);
-  }
+  margin-bottom: 0;
 
   a,
   a:visited,
-  a:hover {
+  a:visited:hover,
+  a:hover,
+  a:active,
+  a:focus {
     color: variables.$color-white;
   }
 }

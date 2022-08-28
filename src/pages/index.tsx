@@ -17,7 +17,7 @@ const Home: NextPage<Props> = ({ content: { pageTitle, mainContentBody, calloutQ
   return (
     <div>
       <Head>
-        <title>{pageTitle} | Loddon Social Enterprise</title>
+        <title>{`${pageTitle} | Loddon Social Enterprise`}</title>
       </Head>
 
       <div className={styles.homepageLayout}>

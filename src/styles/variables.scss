@@ -10,7 +10,9 @@ $breakpoints: (
 );
 
 $base-spacing: 15px;
-$border-radius: 8px;
+$column-spacing: $base-spacing * 3;
+$row-spacing: $base-spacing * 2;
+$border-radius: $base-spacing / 2;
 
 
 /**
@@ -28,9 +30,9 @@ $color-white: #ffffff;
 
 $color-gray-10: #111111;
 $color-gray-20: #444444;
-$color-gray-20: #888888;
-$color-gray-20: #bababa;
-$color-gray-20: #eaeaea;
+$color-gray-30: #888888;
+$color-gray-40: #bababa;
+$color-gray-50: #eaeaea;
 
 $text-color: $color-gray-10;
 

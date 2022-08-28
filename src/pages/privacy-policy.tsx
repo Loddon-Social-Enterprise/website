@@ -10,9 +10,9 @@ interface Props {
   content: IPageFields;
 }
 
-const WhatWeDo: NextPage<Props> = ({ content: { pageTitle, body } }) => {
+const PrivacyPolicy: NextPage<Props> = ({ content: { pageTitle, body } }) => {
   return (
-    <div>
+    <>
       <Head>
         <title>{`${pageTitle} | Loddon Social Enterprise`}</title>
       </Head>
@@ -20,16 +20,16 @@ const WhatWeDo: NextPage<Props> = ({ content: { pageTitle, body } }) => {
       <section className={styles.privacyPolicy}>
         {body && documentToReactComponents(body.json)}
       </section>
-    </div>
+    </>
   );
 };
 
 export async function getStaticProps() {
-  const content = await getGenericPage('what-we-do');
+  const content = await getGenericPage('privacy-policy');
 
   return {
     props: { content }
   };
 }
 
-export default WhatWeDo;
+export default PrivacyPolicy;

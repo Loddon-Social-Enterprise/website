@@ -12,7 +12,10 @@
 
   a,
   a:visited,
-  a:hover {
+  a:visited:hover,
+  a:hover,
+  a:active,
+  a:focus  {
     color: variables.$color-white;
   }
 
@@ -25,6 +28,8 @@
 .footerInner {
   display: flex;
   flex-direction: column;
+  column-gap: variables.$column-spacing;
+  row-gap: variables.$row-spacing;
   width: 100%;
   align-self: center;
   justify-self: center;
@@ -37,15 +42,6 @@
 }
 
 .footerSection {
-  &:not(:last-of-type) {
-    margin-bottom: calc(variables.$base-spacing * 2);
-
-    @include media.desktop {
-      margin-bottom: 0;
-      margin-right: calc(variables.$base-spacing * 4);
-    }
-  }
-
   h2 {
     margin-bottom: variables.$base-spacing;
     font-size: 16px;

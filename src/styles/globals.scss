@@ -1,3 +1,7 @@
 @import './variables';
+
+@import '~leaflet/dist/leaflet.css';
 @import 'scss-reset/_reset.scss';
 @import 'scss-reset/_typography.scss';
+
+@import './typography';

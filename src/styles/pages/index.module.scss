@@ -4,6 +4,7 @@
 .homepageLayout {
   display: flex;
   flex-direction: column;
+  column-gap: variables.$column-spacing;
 
   @include media.tablet {
     flex-direction: row-reverse;
@@ -12,11 +13,6 @@
 
 .mainBody {
   flex: 1;
-
-  h1,
-  p {
-    margin-bottom: calc(variables.$base-spacing * 2);
-  }
 
   h1 {
     font-size: 26px;
