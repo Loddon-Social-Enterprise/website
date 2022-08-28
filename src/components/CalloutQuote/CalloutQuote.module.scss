@@ -1,0 +1,7 @@
+@use 'src/styles/variables';
+
+.calloutQuote {
+  color: variables.$color-brand-orange;
+  font-size: 32px;
+  font-style: italic;
+}

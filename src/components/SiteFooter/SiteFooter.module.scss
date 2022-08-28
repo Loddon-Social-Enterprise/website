@@ -1,0 +1,74 @@
+@use 'src/styles/media';
+@use 'src/styles/variables';
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  padding: calc(variables.$base-spacing * 2) variables.$base-spacing;
+  background-color: variables.$color-brand-blue;
+  color: variables.$color-white;
+  font-size: 14px;
+  line-height: 20px;
+
+  a,
+  a:visited,
+  a:hover {
+    color: variables.$color-white;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+}
+
+.footerInner {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-self: center;
+  justify-self: center;
+  max-width: variables.$max-page-width;
+  padding: 0 calc(variables.$base-spacing * 2);
+
+  @include media.desktop {
+    flex-direction: row;
+  }
+}
+
+.footerSection {
+  &:not(:last-of-type) {
+    margin-bottom: calc(variables.$base-spacing * 2);
+
+    @include media.desktop {
+      margin-bottom: 0;
+      margin-right: calc(variables.$base-spacing * 4);
+    }
+  }
+
+  h2 {
+    margin-bottom: variables.$base-spacing;
+    font-size: 16px;
+  }
+}
+
+.hccLogo {
+  @include media.desktop {
+    margin-left: auto;
+  }
+
+  h2 {
+    font-size: 14px;
+  }
+}
+
+.copy {
+  display: block;
+  margin-bottom: variables.$base-spacing;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.regNumbers {
+  margin-bottom: variables.$base-spacing;
+}

@@ -1,0 +1,32 @@
+@use 'src/styles/variables';
+
+.navBar {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  background-color: variables.$color-brand-light-blue;
+  font-weight: bold;
+}
+
+.inner {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  max-width: variables.$max-page-width;
+  padding: 0 calc(variables.$base-spacing * 2);
+}
+
+.navItem {
+  padding: variables.$base-spacing 0;
+
+  &:not(:last-of-type) {
+    margin-right: calc(variables.$base-spacing * 2);
+  }
+
+  a,
+  a:visited,
+  a:hover {
+    color: variables.$color-white;
+  }
+}

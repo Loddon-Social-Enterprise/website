@@ -1,0 +1,16 @@
+@use 'src/styles/variables';
+
+.header {
+  display: flex;
+  flex-direction: column;
+  padding-top: calc(variables.$base-spacing * 4);
+}
+
+.logoWrapper {
+  width: 100%;
+  align-self: center;
+  justify-self: center;
+  max-width: variables.$max-page-width;
+  margin-bottom: calc(variables.$base-spacing / 2);
+  padding: 0 calc(variables.$base-spacing * 2);
+}

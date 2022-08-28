@@ -1,0 +1,50 @@
+/**
+ * Sizings
+ */
+ 
+$max-page-width: 1280px;
+
+$breakpoints: (
+  'tablet': 720px,
+  'desktop': 996px,
+);
+
+$base-spacing: 15px;
+$border-radius: 8px;
+
+
+/**
+ * Colours
+ */
+
+$color-brand-red: #d56062;
+$color-brand-orange: #f37748;
+$color-brand-yellow: #ecc30B;
+$color-brand-blue: #067bc2;
+$color-brand-light-blue: #84bcda;
+
+$color-black: #000000;
+$color-white: #ffffff;
+
+$color-gray-10: #111111;
+$color-gray-20: #444444;
+$color-gray-20: #888888;
+$color-gray-20: #bababa;
+$color-gray-20: #eaeaea;
+
+$text-color: $color-gray-10;
+
+/**
+ * Typography
+ */
+$font-family: 'Montserrat', sans-serif;
+$font-family-title: 'Montserrat', sans-serif;
+
+$body-font: $font-family;
+$body-font-weight: 400;
+
+$header-font: $font-family-title;
+
+$basic-font-size: 100%;
+$paragraph: 21px;
+$line-height: 33px;

@@ -1,0 +1,16 @@
+@use 'src/styles/variables';
+
+.layoutWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  width: 100%;
+  align-self: center;
+  justify-self: center;
+  max-width: variables.$max-page-width;
+  margin-top: calc(variables.$base-spacing * 4);
+  margin-bottom: calc(variables.$base-spacing * 2);
+  padding: 0 calc(variables.$base-spacing * 2);
+}
