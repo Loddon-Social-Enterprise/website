@@ -5,3 +5,7 @@
 @import 'scss-reset/_typography.scss';
 
 @import './typography';
+
+body {
+  background-color: $color-gray-60;
+}

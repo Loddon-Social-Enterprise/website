@@ -31,3 +31,8 @@
     color: variables.$color-white;
   }
 }
+
+.currentNavItem {
+  background: url('/images/navigation-current.svg') bottom center no-repeat;
+  background-size: 14px 7px;
+}
