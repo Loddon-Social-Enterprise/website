@@ -6,7 +6,7 @@ import React from 'react';
 import { getHomepage } from 'src/api/queries';
 import { IHomepageFields } from 'src/types/contentful';
 import { CalloutQuote } from 'src/components/CalloutQuote';
-import ellipseServiceHighlight from 'public/images/ellipse-service-highlight.png';
+import ellipseServiceHighlight from 'public/images/ellipse-service-highlight.svg';
 import styles from 'src/styles/pages/index.module.scss';
 
 interface Props {
@@ -25,7 +25,9 @@ const Home: NextPage<Props> = ({ content: { pageTitle, mainContentBody, calloutQ
           {mainContentBody && documentToReactComponents(mainContentBody.json)}
         </section>
         <aside className={styles.asideColumn}>
-          <Image src={ellipseServiceHighlight} alt="A smiling Loddon service user working on a project" />
+          <div>
+            <Image src={ellipseServiceHighlight} alt="A smiling Loddon service user working on a project" />
+          </div>
           {calloutQuote && (
             <CalloutQuote>
               <>{documentToReactComponents(calloutQuote.json)}</>

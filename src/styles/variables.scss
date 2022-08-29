@@ -19,12 +19,6 @@ $border-radius: $base-spacing / 2;
  * Colours
  */
 
-$color-brand-red: #d56062;
-$color-brand-orange: #f37748;
-$color-brand-yellow: #ecc30B;
-$color-brand-blue: #067bc2;
-$color-brand-light-blue: #84bcda;
-
 $color-black: #000000;
 $color-white: #ffffff;
 
@@ -34,11 +28,23 @@ $color-gray-30: #888888;
 $color-gray-40: #cacaca;
 $color-gray-50: #f8f8f8;
 
+$color-orange-10: #ab4a23;
+$color-orange-20: #d36034;
+$color-orange-30: #f37748;
+$color-orange-40: #fc8a5f;
+$color-orange-50: #ff9f79;
+
 $color-blue-10: #005691;
-$color-blue-20: #0069AB;
+$color-blue-20: #0069ab;
 $color-blue-30: #067bc2;
-$color-blue-40: #2A93D4;
-$color-blue-50: #54AAE3;
+$color-blue-40: #2a93d4;
+$color-blue-50: #54aae3;
+
+$color-brand-red: #d56062;
+$color-brand-orange: $color-orange-30;
+$color-brand-yellow: #ecc30B;
+$color-brand-blue: $color-blue-30;
+$color-brand-light-blue: #84bcda;
 
 $text-color: $color-gray-10;
 

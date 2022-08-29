@@ -20,5 +20,12 @@
 }
 
 .asideColumn {
-  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: variables.$row-spacing;
+
+  @include media.tablet {
+    max-width: 320px;
+  }
 }
