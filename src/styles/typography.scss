@@ -10,9 +10,19 @@ p:not(:last-child) {
   margin-bottom: calc(variables.$base-spacing * 2);
 }
 
-h2 {
+h2,
+h3 {
   margin-bottom: variables.$base-spacing;
+}
+
+h2 {
   font-size: 24px;
+  color: variables.$color-brand-orange;
+}
+
+h3 {
+  margin-top: calc(variables.$base-spacing * 2);
+  font-size: 21px;
 }
 
 p {

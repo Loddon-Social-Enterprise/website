@@ -1,14 +1,12 @@
 import { request } from './client';
 
 export const getGenericPage = async (slug: string, variables = null) => {
-  const query = `query($preview: Boolean){
-    pageCollection(
-      where: {
-        slug: "${slug}"
-      }
-      preview: $preview
-    ) {
+  const query = `query($preview: Boolean) {
+    pageCollection(limit: 1, where: { slug: "${slug}" }, preview: $preview) {
       items {
+        sys {
+          id
+        }
         pageTitle
         body {
           json
@@ -27,7 +25,7 @@ export const getGenericPage = async (slug: string, variables = null) => {
 
 export const getHomepage = async (variables = null) => {
   const query = `query($preview: Boolean){
-    homepageCollection(preview: $preview) {
+    homepageCollection(limit: 1, preview: $preview) {
       items {
         pageTitle
         mainContentBody {
@@ -51,9 +49,57 @@ export const getHomepage = async (variables = null) => {
   return data.homepageCollection.items[0];
 };
 
+export const getWhatWeDoPage = async (variables = null) => {
+  const query = `query($preview: Boolean) {
+    pageCollection(limit: 1, where: { slug: "what-we-do" }, preview: $preview) {
+      items {
+        sys {
+          id
+        }
+        pageTitle
+        body {
+          json
+          links {
+            entries {
+              block {
+                sys {
+                  id
+                }
+                __typename
+                ... on PartnerList {
+                  slug
+                  companyName
+                  description {
+                    json
+                  }
+                  logo {
+                    url
+                    width
+                    height
+                  }
+                  testimonial {
+                    json
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }`;
+
+  const data = await request({
+    query,
+    variables: {}
+  });
+
+  return data.pageCollection.items[0];
+};
+
 export const getContactPage = async (variables = null) => {
   const query = `query($preview: Boolean){
-    contactPageCollection(preview: $preview) {
+    contactPageCollection(limit: 1, preview: $preview) {
       items {
         pageTitle
         contactBody {
