@@ -40,6 +40,6 @@
 .currentNavItem {
   @include media.tablet {
     background: url('/images/navigation-current.svg') bottom center no-repeat;
-    background-size: 14px 7px;
+    background-size: 20px 6px;
   }
 }
