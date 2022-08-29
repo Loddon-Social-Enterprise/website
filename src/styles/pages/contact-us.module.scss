@@ -3,11 +3,15 @@
 
 .contactUs {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   column-gap: variables.$column-spacing;
 
   @include media.tablet {
-    flex-direction: row;
+    flex-direction: row-reverse;
+  }
+
+  section {
+    flex: 1;
   }
 }
 
@@ -15,11 +19,11 @@
   width: 100%;
 
   @include media.tablet {
-    width: 70%;
+    width: 320px;
   }
 
   @include media.desktop {
-    width: 40%;
+    width: 480px;
   }
 }
 

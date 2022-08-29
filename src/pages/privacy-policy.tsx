@@ -1,6 +1,6 @@
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import type { NextPage } from 'next';
-import Head from 'next/head';
+import { NextSeo } from 'next-seo';
 import React from 'react';
 import { getGenericPage } from 'src/api/queries';
 import { IPageFields } from 'src/types/contentful';
@@ -13,9 +13,7 @@ interface Props {
 const PrivacyPolicy: NextPage<Props> = ({ content: { pageTitle, body } }) => {
   return (
     <>
-      <Head>
-        <title>{`${pageTitle} | Loddon Social Enterprise`}</title>
-      </Head>
+      <NextSeo title={pageTitle} />
 
       <section className={styles.page}>{body && documentToReactComponents(body.json)}</section>
     </>

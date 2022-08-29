@@ -1,40 +1,44 @@
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import type { NextPage } from 'next';
+import { NextSeo } from 'next-seo';
 import Head from 'next/head';
-import { Map } from 'src/components/Map';
+import { getContactPage } from 'src/api/queries';
+import { AddressMarker, Map } from 'src/components/Map';
 import styles from 'src/styles/pages/contact-us.module.scss';
+import { IContactPageFields } from 'src/types/contentful';
 
-const ContactUs: NextPage = () => {
+interface Props {
+  content: IContactPageFields;
+}
+
+const ContactUs: NextPage<Props> = ({ content: { pageTitle, contactBody, mapAddress, mapSettings } }) => {
+  const latLng = {
+    lat: mapSettings?.lat && parseFloat(mapSettings?.lat),
+    lng: mapSettings?.lng && parseFloat(mapSettings?.lng)
+  };
+
   return (
     <>
-      <Head>
-        <title>Contact Us | Loddon Social Enterprise</title>
-      </Head>
+      <NextSeo title={pageTitle} />
+
       <div className={styles.contactUs}>
+        <section>{contactBody && documentToReactComponents(contactBody.json)}</section>
         <div className={styles.mapContainer}>
-          <Map className={styles.map} />
+          <Map className={styles.map} latLng={latLng} zoom={mapSettings?.zoom}>
+            <AddressMarker position={latLng}>{mapAddress && documentToReactComponents(mapAddress.json)}</AddressMarker>
+          </Map>
         </div>
-        <section>
-          <h1>Contact Us</h1>
-          <h2>Phone</h2>
-          <p>
-            <a href="tel:+4401256352058">01256 352058</a>
-          </p>
-          <h2>Email</h2>
-          <p>
-            <a href="mailto:cathy@loddonctl.co.uk">cathy@loddonctl.co.uk</a>
-          </p>
-          <h2>Opening Hours</h2>
-          <p>
-            We are open 51 weeks of the year (excluding Bank Holidays)
-            <br />
-            Monday to Thursday: 09:00 to 15:00
-            <br />
-            Fridays: Closed
-          </p>
-        </section>
       </div>
     </>
   );
 };
+
+export async function getStaticProps() {
+  const content = await getContactPage();
+
+  return {
+    props: { content }
+  };
+}
 
 export default ContactUs;

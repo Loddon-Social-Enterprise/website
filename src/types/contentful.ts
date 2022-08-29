@@ -17,3 +17,18 @@ export interface IHomepageFields {
     json: CFRichTextTypes.Document;
   };
 }
+
+export interface IContactPageFields {
+  pageTitle: Contentful.EntryFields.Symbol;
+  contactBody?: {
+    json: CFRichTextTypes.Document;
+  };
+  mapAddress?: {
+    json: CFRichTextTypes.Document;
+  };
+  mapSettings?: {
+    lat: string;
+    lng: string;
+    zoom: number;
+  };
+}

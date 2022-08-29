@@ -1,5 +1,12 @@
-.marker {
-  width: 50px;
-  height: 91px;
-  background: url('/images/map-pointer.svg');
+@use 'src/styles/variables';
+
+.map {
+  :global {
+    .leaflet-popup-content {
+      width: 240px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 16px;
+      text-align: center;
+    }
+  }
 }

@@ -1,7 +1,7 @@
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import type { NextPage } from 'next';
-import Head from 'next/head';
 import Image from 'next/image';
+import { NextSeo } from 'next-seo';
 import React from 'react';
 import { getHomepage } from 'src/api/queries';
 import { IHomepageFields } from 'src/types/contentful';
@@ -16,9 +16,7 @@ interface Props {
 const Home: NextPage<Props> = ({ content: { pageTitle, mainContentBody, calloutQuote } }) => {
   return (
     <div>
-      <Head>
-        <title>{`${pageTitle} | Loddon Social Enterprise`}</title>
-      </Head>
+      <NextSeo title={pageTitle} />
 
       <div className={styles.homepageLayout}>
         <section className={styles.mainBody}>
