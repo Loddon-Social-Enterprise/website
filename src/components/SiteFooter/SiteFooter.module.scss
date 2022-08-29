@@ -67,4 +67,9 @@
 
 .regNumbers {
   margin-bottom: variables.$base-spacing;
+  line-height: calc(variables.$base-spacing * 2);
+}
+
+.contactDetails {
+  line-height: calc(variables.$base-spacing * 2);
 }

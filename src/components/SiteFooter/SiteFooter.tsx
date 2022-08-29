@@ -19,9 +19,11 @@ const SiteFooter = () => (
       <section className={styles.footerSection}>
         <h2>Contact Us</h2>
         <p>
-          <a href="mailto:cathy@loddonse.co.uk">cathy@loddonse.co.uk</a>
-          <br />
-          <a href="tel:+441256352058">01256 352058</a>
+          <span className={styles.contactDetails}>
+            <a href="mailto:cathy@loddonse.co.uk">cathy@loddonse.co.uk</a>
+            <br />
+            <a href="tel:+441256352058">01256 352058</a>
+          </span>
           <br />
           <br />
           <span>
