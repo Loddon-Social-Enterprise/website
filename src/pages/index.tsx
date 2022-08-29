@@ -13,10 +13,14 @@ interface Props {
   content: IHomepageFields;
 }
 
-const Home: NextPage<Props> = ({ content: { pageTitle, mainContentBody, calloutQuote } }) => {
+const Home: NextPage<Props> = ({ content: { pageTitle, mainContentBody, calloutQuote, alertMessage } }) => {
   return (
     <div>
       <NextSeo title={pageTitle} />
+
+      {alertMessage && alertMessage.json && (
+        <div className={styles.alert}>{mainContentBody && documentToReactComponents(alertMessage.json)}</div>
+      )}
 
       <div className={styles.homepageLayout}>
         <section className={styles.mainBody}>

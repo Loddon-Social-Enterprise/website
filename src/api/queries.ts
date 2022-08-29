@@ -36,6 +36,9 @@ export const getHomepage = async (variables = null) => {
         calloutQuote {
           json
         }
+        alertMessage {
+          json
+        }
       }
     }
   }`;

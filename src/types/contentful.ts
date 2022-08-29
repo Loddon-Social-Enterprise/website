@@ -16,6 +16,9 @@ export interface IHomepageFields {
   calloutQuote?: {
     json: CFRichTextTypes.Document;
   };
+  alertMessage?: {
+    json: CFRichTextTypes.Document;
+  };
 }
 
 export interface IContactPageFields {
