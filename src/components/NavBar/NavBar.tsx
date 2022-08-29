@@ -24,7 +24,7 @@ const NavBar = () => {
         ))}
       </ul>
     </nav>
-  )
+  );
 };
 
 export { NavBar };

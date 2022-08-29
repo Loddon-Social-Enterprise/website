@@ -8,5 +8,6 @@ module.exports = {
   },
   assetPrefix: isProd ? './' : '.',
   basePath: isProd ? '/website' : '',
-  reactStrictMode: true
+  reactStrictMode: true,
+  poweredByHeader: false
 };

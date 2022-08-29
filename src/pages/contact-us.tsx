@@ -25,8 +25,10 @@ const ContactUs: NextPage = () => {
           </p>
           <h2>Opening Hours</h2>
           <p>
-            We are open 51 weeks of the year (excluding Bank Holidays)<br />
-            Monday to Thursday: 09:00 to 15:00<br />
+            We are open 51 weeks of the year (excluding Bank Holidays)
+            <br />
+            Monday to Thursday: 09:00 to 15:00
+            <br />
             Fridays: Closed
           </p>
         </section>

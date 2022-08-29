@@ -1,7 +1,9 @@
 import dynamic from 'next/dynamic';
 
-const Map = dynamic(() => import('./Map'), {
-  ssr: false
-});
+const importMapValues = (module: string) =>
+  dynamic(() => import('./Map').then((mod: any) => mod[module]) as Promise<React.FC<any>>, { ssr: false });
 
-export { Map };
+const Map = importMapValues('Map');
+const AddressMarker = importMapValues('AddressMarker');
+
+export { Map, AddressMarker };

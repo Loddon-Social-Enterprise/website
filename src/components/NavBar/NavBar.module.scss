@@ -1,3 +1,4 @@
+@use 'src/styles/media';
 @use 'src/styles/variables';
 
 .navBar {
@@ -5,17 +6,21 @@
   width: 100%;
   align-items: center;
   justify-content: center;
-  background-color: variables.$color-brand-light-blue;
+  background-color: rgba(variables.$color-blue-20, 25%);
   font-weight: bold;
 }
 
 .inner {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   column-gap: calc(variables.$base-spacing * 2);
   width: 100%;
   max-width: variables.$max-page-width;
   padding: 0 calc(variables.$base-spacing * 2);
+
+  @include media.tablet {
+    flex-direction: row;
+  }
 }
 
 .navItem {
@@ -33,6 +38,8 @@
 }
 
 .currentNavItem {
-  background: url('/images/navigation-current.svg') bottom center no-repeat;
-  background-size: 14px 7px;
+  @include media.tablet {
+    background: url('/images/navigation-current.svg') bottom center no-repeat;
+    background-size: 14px 7px;
+  }
 }

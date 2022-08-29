@@ -4,7 +4,7 @@ import Head from 'next/head';
 import React from 'react';
 import { getGenericPage } from 'src/api/queries';
 import { IPageFields } from 'src/types/contentful';
-import styles from 'src/styles/pages/page.module.scss'
+import styles from 'src/styles/pages/page.module.scss';
 
 interface Props {
   content: IPageFields;
@@ -17,9 +17,7 @@ const PrivacyPolicy: NextPage<Props> = ({ content: { pageTitle, body } }) => {
         <title>{`${pageTitle} | Loddon Social Enterprise`}</title>
       </Head>
 
-      <section className={styles.page}>
-        {body && documentToReactComponents(body.json)}
-      </section>
+      <section className={styles.page}>{body && documentToReactComponents(body.json)}</section>
     </>
   );
 };
