@@ -10,7 +10,7 @@ interface Props {
   content: IPageFields;
 }
 
-const WhatWeDo: NextPage<Props> = ({ content: { pageTitle, body } }) => {
+const OurTeam: NextPage<Props> = ({ content: { pageTitle, body } }) => {
   return (
     <>
       <Head>
@@ -23,11 +23,11 @@ const WhatWeDo: NextPage<Props> = ({ content: { pageTitle, body } }) => {
 };
 
 export async function getStaticProps() {
-  const content = await getGenericPage('what-we-do');
+  const content = await getGenericPage('our-team');
 
   return {
     props: { content }
   };
 }
 
-export default WhatWeDo;
+export default OurTeam;
