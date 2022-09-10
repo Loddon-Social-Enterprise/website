@@ -32,7 +32,11 @@ p {
 a,
 a:visited,
 a:active {
-  color: variables.$color-brand-blue;
+  text-decoration: underline;
+}
+
+a:hover {
+  text-decoration: none;
 }
 
 a:focus {

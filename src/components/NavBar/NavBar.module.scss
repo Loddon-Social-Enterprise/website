@@ -67,6 +67,11 @@
   a:active,
   a:focus {
     color: variables.$color-white;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
   }
 }
 
