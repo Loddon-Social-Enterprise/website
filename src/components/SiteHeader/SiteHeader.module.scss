@@ -7,6 +7,10 @@
   padding-top: calc(variables.$base-spacing * 2);
   background-color: variables.$color-brand-blue;
 
+  @include media.tablet {
+    padding-top: calc(variables.$base-spacing * 4);
+  }
+
   &::before {
     opacity: 0.2;
     content: "";
@@ -25,9 +29,12 @@
       opacity: 1;
       max-height: 150px;
     }
+
+    @include media.tablet {
+      max-height: 180px;
+    }
       
     @include media.desktop {
-      padding-top: calc(variables.$base-spacing * 4);
       background-image: none;
     }
   }
@@ -56,7 +63,7 @@
     position: absolute;
     top: 0;
     right: 0;
-    width: 22.5%;
+    width: 25%;
     text-align: right;
   }
 }
