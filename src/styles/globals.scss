@@ -7,5 +7,6 @@
 @import './typography';
 
 body {
+  scroll-behavior: smooth;
   background-color: $color-white;
 }

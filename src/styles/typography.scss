@@ -28,3 +28,13 @@ h3 {
 p {
   white-space: pre-line;
 }
+
+a,
+a:visited,
+a:active {
+  color: variables.$color-brand-blue;
+}
+
+a:focus {
+  color: variables.$color-brand-orange;
+}

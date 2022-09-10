@@ -1,17 +1,62 @@
 @use 'src/styles/variables';
+@use 'src/styles/media';
 
 .header {
   display: flex;
   flex-direction: column;
-  padding-top: calc(variables.$base-spacing * 4);
+  padding-top: calc(variables.$base-spacing * 2);
   background-color: variables.$color-brand-blue;
+
+  &::before {
+    opacity: 0.2;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    max-height: 125px;
+    background-image: url("/images/smiles-group.svg");
+    background-position: top right;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    @include media.handheld-large {
+      opacity: 1;
+      max-height: 150px;
+    }
+      
+    @include media.desktop {
+      padding-top: calc(variables.$base-spacing * 4);
+      background-image: none;
+    }
+  }
 }
 
 .logoWrapper {
+  display: flex;
   width: 100%;
   align-self: center;
-  justify-self: center;
+  justify-content: center;
   max-width: variables.$max-page-width;
   margin-bottom: calc(variables.$base-spacing / 2);
   padding: 0 calc(variables.$base-spacing * 2);
+
+  @include media.handheld-large {
+    justify-content: flex-start;
+  }
+}
+
+.smiles {
+  display: none;
+
+  @include media.desktop {
+    z-index: 50;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 22.5%;
+    text-align: right;
+  }
 }

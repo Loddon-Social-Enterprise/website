@@ -7,6 +7,12 @@
   }
 }
 
+@mixin handheld-large($media-type: 'screen') {
+  @include media-query('handheld-large', $media-type) {
+    @content;
+  }
+}
+
 @mixin tablet($media-type: 'screen') {
   @include media-query('tablet', $media-type) {
     @content;

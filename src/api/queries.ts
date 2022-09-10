@@ -49,54 +49,6 @@ export const getHomepage = async (variables = null) => {
   return data.homepageCollection.items[0];
 };
 
-export const getWhatWeDoPage = async (variables = null) => {
-  const query = `query($preview: Boolean) {
-    pageCollection(limit: 1, where: { slug: "what-we-do" }, preview: $preview) {
-      items {
-        sys {
-          id
-        }
-        pageTitle
-        body {
-          json
-          links {
-            entries {
-              block {
-                sys {
-                  id
-                }
-                __typename
-                ... on PartnerList {
-                  slug
-                  companyName
-                  description {
-                    json
-                  }
-                  logo {
-                    url
-                    width
-                    height
-                  }
-                  testimonial {
-                    json
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }`;
-
-  const data = await request({
-    query,
-    variables: {}
-  });
-
-  return data.pageCollection.items[0];
-};
-
 export const getContactPage = async (variables = null) => {
   const query = `query($preview: Boolean){
     contactPageCollection(limit: 1, preview: $preview) {

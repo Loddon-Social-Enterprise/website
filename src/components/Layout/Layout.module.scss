@@ -17,12 +17,3 @@
   margin-bottom: calc(variables.$base-spacing * 4);
   padding: 0 calc(variables.$base-spacing * 2);
 }
-
-.smiles {
-  position: absolute;
-  z-index: 999;
-  top: 0;
-  right: 0;
-  width: 25%;
-  text-align: right;
-}

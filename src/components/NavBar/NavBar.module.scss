@@ -3,6 +3,7 @@
 
 .navBar {
   display: flex;
+  flex-direction: column;
   width: 100%;
   align-items: center;
   justify-content: center;
@@ -11,21 +12,53 @@
 }
 
 .inner {
+  overflow: hidden;
+  opacity: 0;
+  max-height: 0;
+
   display: flex;
   flex-direction: column;
   column-gap: calc(variables.$base-spacing * 2);
   width: 100%;
   max-width: variables.$max-page-width;
   padding: 0 calc(variables.$base-spacing * 2);
+  transition: all 0.5s ease-out;
 
   @include media.tablet {
+    overflow: auto;
+    opacity: 1;
+    max-height: 100%;
+    transition: unset;
     flex-direction: row;
+  }
+
+  &.isExpanded {
+    overflow: auto;
+    opacity: 1;
+    max-height: 1920px;
+
+    transition: all 1s ease-out;
+
+    > .navItem {
+      opacity: 1;
+      transition: all 1s ease-out;
+    }
   }
 }
 
 .navItem {
+  z-index: 100;
+  opacity: 0;
+  height: 100%;
   padding: variables.$base-spacing 0;
   margin-bottom: 0;
+  text-align: center;
+  transition: all 0.5s ease-out;
+
+  @include media.tablet {
+    opacity: 1;
+    transition: unset;
+  }
 
   a,
   a:visited,
@@ -41,5 +74,21 @@
   @include media.tablet {
     background: url('/images/navigation-current.svg') bottom center no-repeat;
     background-size: 20px 6px;
+  }
+}
+
+.button {
+  width: 100%;
+  padding: variables.$base-spacing 0;
+  font-size: 21px;
+  color: #fff;
+
+  @include media.tablet {
+    display: none !important;
+  }
+
+  &:focus,
+  &:hover {
+    background: rgba(255,255,255,0.1);
   }
 }
