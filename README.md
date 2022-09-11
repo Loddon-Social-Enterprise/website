@@ -12,7 +12,7 @@ The core focus was to replace the former paid hosted Wordpress website with a we
 
 Building the app for production is handled by the default Netlify Github integration.
 
-A new build of the app will be triggered when `main` is updated in the Github repo.
+A new build of the app will be triggered on new pushes to `main` in the Github repo.
 
 Builds will also be triggered from Contentful, via a webhook, whenever a piece of content is published or unpublished.
 
