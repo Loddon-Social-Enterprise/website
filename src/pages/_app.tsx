@@ -7,7 +7,7 @@ import '../styles/globals.scss';
 
 const App = ({ Component, pageProps }: AppProps) => {
   useEffect(() => {
-    console.log(`/**\n * Contribute and fork on Github \n * https://github.com/loddon-Social-Enterprise/website\n */`);
+    console.log(`/**\n * Contribute and fork on Github \n * https://github.com/loddon-social-enterprise/website\n */`);
   }, []);
 
   return (

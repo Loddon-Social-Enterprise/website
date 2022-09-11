@@ -39,6 +39,6 @@ a:hover {
   text-decoration: none;
 }
 
-a:focus {
-  color: variables.$color-brand-orange;
+a:focus-visible {
+  outline: 4px dashed variables.$color-brand-yellow;
 }

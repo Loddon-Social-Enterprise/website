@@ -18,14 +18,13 @@
 
   display: flex;
   flex-direction: column;
-  column-gap: calc(variables.$base-spacing * 2);
   width: 100%;
   max-width: variables.$max-page-width;
   padding: 0 calc(variables.$base-spacing * 2);
   transition: all 0.5s ease-out;
 
   @include media.tablet {
-    overflow: auto;
+    overflow: unset;
     opacity: 1;
     max-height: 100%;
     transition: unset;
@@ -48,16 +47,13 @@
 
 .navItem {
   z-index: 100;
-  opacity: 0;
   height: 100%;
   margin-bottom: 0;
   color: variables.$color-white;
   text-align: center;
-  transition: all 0.5s ease-out;
   cursor: pointer;
 
   @include media.tablet {
-    opacity: 1;
     transition: unset;
   }
 
@@ -68,7 +64,7 @@
   a:active,
   a:focus {
     display: block;
-    padding: variables.$base-spacing 0;
+    padding: variables.$base-spacing;
     color: variables.$color-white;
     text-decoration: none;
   }
@@ -79,7 +75,7 @@
 }
 
 .currentNavItem {
-  padding: variables.$base-spacing 0;
+  padding: variables.$base-spacing;
   color: variables.$color-brand-yellow;
 
   @include media.tablet {
