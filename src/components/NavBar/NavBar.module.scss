@@ -22,12 +22,17 @@
   padding: 0 calc(variables.$base-spacing * 2);
   transition: all 0.25s ease-out;
 
+  @include media.handheld-large {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
   @include media.tablet {
     overflow: unset;
     opacity: 1;
     max-height: 1920px;
     transition: unset;
-    flex-direction: row;
+    flex-wrap: nowrap;
     margin-left: calc(-1 * variables.$base-spacing * 2);
   }
 
@@ -59,14 +64,20 @@
 
 .navItem {
   z-index: 100;
+  flex: 1;
   margin-bottom: 0;
   color: variables.$color-white;
   text-align: center;
+
+  @include media.handheld-large {
+    flex: 0 50%;
+  }
 
   @include media.tablet {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex: unset;
     transition: unset;
   }
 
