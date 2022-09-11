@@ -17,3 +17,25 @@
   margin-bottom: calc(variables.$base-spacing * 4);
   padding: 0 calc(variables.$base-spacing * 2);
 }
+
+.skipToContent {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+
+  &:focus {
+    position: static;
+    display: block;
+    width: auto;
+    height: auto;
+    padding: variables.$base-spacing;
+    background-color: variables.$color-brand-yellow;
+    color: variables.$color-black;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: underline;
+  }
+}

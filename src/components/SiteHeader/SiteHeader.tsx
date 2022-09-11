@@ -8,13 +8,13 @@ import styles from './SiteHeader.module.scss';
 const SiteHeader = () => (
   <>
     <header className={styles.header}>
-      <div className={styles.smiles}>
+      <div className={styles.smiles} aria-hidden="true">
         <Image src={smiles} alt="Collection of smiley face emojis" />
       </div>
       <div className={styles.logoWrapper}>
         <Link href="/" passHref>
           <a>
-            <Image src={logo} alt="Loddon Social Enterprise" />
+            <Image src={logo} title="Loddon Social Enterprise" alt="Loddon Social Enterprise logo" />
           </a>
         </Link>
       </div>

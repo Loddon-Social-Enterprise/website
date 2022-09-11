@@ -17,8 +17,20 @@ const NavBar = () => {
   const { pathname } = useRouter();
   const [isResponsiveMenuExpanded, setIsResponsiveMenuExpanded] = useState(false);
 
-  const toggleExpanded = useCallback(() => {
-    window.scrollTo(0, 0);
+  const scrollToTop = () =>
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
+
+  const closeMenu = useCallback(() => {
+    scrollToTop();
+    setIsResponsiveMenuExpanded(false);
+  }, []);
+
+  const toggleMenu = useCallback(() => {
+    scrollToTop();
     setIsResponsiveMenuExpanded((state: boolean) => !state);
   }, []);
 
@@ -27,13 +39,17 @@ const NavBar = () => {
       <ul className={classnames([styles.inner, isResponsiveMenuExpanded && styles.isExpanded])}>
         {Object.entries(links).map(([title, href]) => (
           <li className={classnames([styles.navItem, pathname.endsWith(href) && styles.currentNavItem])} key={href}>
-            <Link href={href} passHref>
-              <a onClick={() => setIsResponsiveMenuExpanded(false)}>{title}</a>
-            </Link>
+            {pathname.endsWith(href) ? (
+              <span onClick={closeMenu}>{title}</span>
+            ) : (
+              <Link href={href} passHref>
+                <a onClick={closeMenu}>{title}</a>
+              </Link>
+            )}
           </li>
         ))}
       </ul>
-      <button className={styles.button} aria-expanded={isResponsiveMenuExpanded} onClick={toggleExpanded}>
+      <button className={styles.button} aria-expanded={isResponsiveMenuExpanded} onClick={toggleMenu}>
         {isResponsiveMenuExpanded ? 'Close Menu' : 'Show Menu'}
       </button>
     </nav>
