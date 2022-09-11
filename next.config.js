@@ -6,8 +6,6 @@ module.exports = {
     loader: 'akamai',
     path: '.',
   },
-  assetPrefix: isProd ? './' : '.',
-  basePath: isProd ? '/website' : '',
   reactStrictMode: true,
   poweredByHeader: false
 };
