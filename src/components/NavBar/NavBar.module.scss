@@ -15,20 +15,20 @@
   overflow: hidden;
   opacity: 0;
   max-height: 0;
-
   display: flex;
   flex-direction: column;
   width: 100%;
   max-width: variables.$max-page-width;
   padding: 0 calc(variables.$base-spacing * 2);
-  transition: all 0.5s ease-out;
+  transition: all 0.25s ease-out;
 
   @include media.tablet {
     overflow: unset;
     opacity: 1;
-    max-height: 100%;
+    max-height: 1920px;
     transition: unset;
     flex-direction: row;
+    margin-left: calc(-1 * variables.$base-spacing * 2);
   }
 
   &.isExpanded {
@@ -38,23 +38,43 @@
 
     transition: all 1s ease-out;
 
+    @media (prefers-reduced-motion) {
+      transition: unset;
+    }
+
     > .navItem {
       opacity: 1;
-      transition: all 1s ease-out;
+      transition: all 0.25s ease-out;
+
+      @media (prefers-reduced-motion) {
+        transition: unset;
+      }
     }
+  }
+
+  @media (prefers-reduced-motion) {
+    transition: unset;
   }
 }
 
 .navItem {
   z-index: 100;
-  height: 100%;
   margin-bottom: 0;
   color: variables.$color-white;
   text-align: center;
-  cursor: pointer;
 
   @include media.tablet {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     transition: unset;
+  }
+
+  > a,
+  > span {
+    padding: variables.$base-spacing;
+    display: block;
+    cursor: pointer;
   }
 
   a,
@@ -63,8 +83,6 @@
   a:hover,
   a:active,
   a:focus {
-    display: block;
-    padding: variables.$base-spacing;
     color: variables.$color-white;
     text-decoration: none;
   }
@@ -75,7 +93,6 @@
 }
 
 .currentNavItem {
-  padding: variables.$base-spacing;
   color: variables.$color-brand-yellow;
 
   @include media.tablet {

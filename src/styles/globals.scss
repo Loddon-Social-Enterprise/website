@@ -8,6 +8,10 @@
 
 html {
   scroll-behavior: smooth;
+
+  @media (prefers-reduced-motion) {
+    scroll-behavior: auto !important;
+  }
 }
 
 body {

@@ -2,6 +2,7 @@ import classnames from 'classnames';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useCallback, useState } from 'react';
+import useReducedMotion from 'src/hooks/useReducedMotion';
 import styles from './NavBar.module.scss';
 
 const links = {
@@ -16,6 +17,7 @@ const links = {
 const NavBar = () => {
   const { pathname } = useRouter();
   const [isResponsiveMenuExpanded, setIsResponsiveMenuExpanded] = useState(false);
+  const hasRequestedReducedMotion = useReducedMotion();
 
   const scrollToTop = () =>
     window.scrollTo({
@@ -24,13 +26,13 @@ const NavBar = () => {
       behavior: 'smooth'
     });
 
-  const closeMenu = useCallback(() => {
-    scrollToTop();
+  const closeMenuAndScroll = useCallback(() => {
+    !hasRequestedReducedMotion && scrollToTop();
     setIsResponsiveMenuExpanded(false);
   }, []);
 
   const toggleMenu = useCallback(() => {
-    scrollToTop();
+    !hasRequestedReducedMotion && scrollToTop();
     setIsResponsiveMenuExpanded((state: boolean) => !state);
   }, []);
 
@@ -40,10 +42,10 @@ const NavBar = () => {
         {Object.entries(links).map(([title, href]) => (
           <li className={classnames([styles.navItem, pathname.endsWith(href) && styles.currentNavItem])} key={href}>
             {pathname.endsWith(href) ? (
-              <span onClick={closeMenu}>{title}</span>
+              <span onClick={closeMenuAndScroll}>{title}</span>
             ) : (
               <Link href={href} passHref>
-                <a onClick={closeMenu}>{title}</a>
+                <a onClick={closeMenuAndScroll}>{title}</a>
               </Link>
             )}
           </li>
