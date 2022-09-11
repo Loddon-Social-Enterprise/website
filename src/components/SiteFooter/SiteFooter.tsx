@@ -12,7 +12,9 @@ const SiteFooter = () => (
         <ul className={styles.regNumbers}>
           <li>Registered Charity No. 1011066</li>
           <li>Company No. 2701126</li>
-          <li>VAT No. 570177149</li>
+          <li>
+            <abbr title="Value Added Tax">VAT</abbr> No. 570177149
+          </li>
         </ul>
         <Link href="/privacy-policy">Privacy Policy</Link>
       </div>
