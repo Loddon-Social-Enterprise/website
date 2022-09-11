@@ -4,9 +4,9 @@
 
 This is the website for Loddon Social Enterprise, a Basingstoke based charity for adults with learning difficulties.
 
-It has been built as a static site on top of NextJS, with content managed in Contentful, and hosting on Netlify.
+It has been built on top of NextJS, with content managed in Contentful, and hosting through Netlify.
 
-The core focus was to replace the former paid hosted Wordpress website with a website that could run completely free of charge. Beyond this the main aims are accessibility, simplicity, and speed.
+The core focus was to replace the former paid hosted Wordpress server with a website that could run on freely available services. Beyond this the main aims are accessibility, simplicity, and speed.
 
 ## Production Builds
 
