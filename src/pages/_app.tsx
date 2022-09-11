@@ -11,6 +11,46 @@ const App = ({ Component, pageProps }: AppProps) => (
       titleTemplate="%s | Loddon Social Enterprise"
       defaultTitle="Loddon Social Enterprise"
       description="Loddon Social Enterprise is a registered UK charity which seeks to provide a safe and fun workshop environment for adults with learning disabilities."
+      additionalLinkTags={[
+        {
+          rel: 'icon',
+          href: '/favicon.ico',
+          sizes: 'any'
+        },
+        {
+          rel: 'icon',
+          href: '/favicon.svg',
+          type: 'image/svg+xml'
+        },
+        {
+          rel: 'apple-touch-icon',
+          href: '/apple-touch-icon.png',
+          sizes: '180x180'
+        },
+        {
+          rel: 'mask-icon',
+          href: '/safari-pinned-tab.svg',
+          color: '#067bc2'
+        },
+        {
+          rel: 'manifest',
+          href: '/site.webmanifest'
+        }
+      ]}
+      additionalMetaTags={[
+        {
+          name: 'apple-mobile-web-app-title',
+          content: 'Loddon Social Enterprise'
+        },
+        {
+          name: 'application-name',
+          content: 'Loddon Social Enterprise'
+        },
+        {
+          name: 'msapplication-TileColor',
+          content: '#067bc2'
+        }
+      ]}
     />
     <Layout>
       <Component {...pageProps} />
