@@ -29,12 +29,12 @@ const NavBar = () => {
   const closeMenuAndScroll = useCallback(() => {
     !hasRequestedReducedMotion && scrollToTop();
     setIsResponsiveMenuExpanded(false);
-  }, []);
+  }, [hasRequestedReducedMotion]);
 
   const toggleMenu = useCallback(() => {
     !hasRequestedReducedMotion && scrollToTop();
     setIsResponsiveMenuExpanded((state: boolean) => !state);
-  }, []);
+  }, [hasRequestedReducedMotion]);
 
   return (
     <nav role="navigation" className={styles.navBar}>
