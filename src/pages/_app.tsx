@@ -72,7 +72,7 @@ const App = ({ Component, pageProps }: AppProps) => {
         id="counter-analytics"
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{
-          __html: `<script>if(!sessionStorage.getItem("_swa")&&document.referrer.indexOf(location.protocol+"//"+location.host)!== 0){fetch("https://counter.dev/track?"+new URLSearchParams({referrer:document.referrer,screen:screen.width+"x"+screen.height,id:"2a772c3b-150f-4721-9a77-8a8cb09fdeba",utcoffset:"1"}))};sessionStorage.setItem("_swa","1");</script>`
+          __html: `if(!sessionStorage.getItem("_swa")&&document.referrer.indexOf(location.protocol+"//"+location.host)!== 0){fetch("https://counter.dev/track?"+new URLSearchParams({referrer:document.referrer,screen:screen.width+"x"+screen.height,id:"2a772c3b-150f-4721-9a77-8a8cb09fdeba",utcoffset:"1"}))};sessionStorage.setItem("_swa","1");`
         }}
       />
     </>
