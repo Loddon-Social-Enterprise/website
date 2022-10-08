@@ -35,7 +35,7 @@
     "@types/node": "18.7.16",
     "@types/react": "17.0.34",
     "@types/react-leaflet": "^2.8.2",
-    "autoprefixer": "^10.4.2",
+    "autoprefixer": "^10.4.12",
     "contentful": "^9.2.5",
     "eslint": "7",
     "eslint-config-next": "12.0.3",
