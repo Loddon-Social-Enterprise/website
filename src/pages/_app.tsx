@@ -56,6 +56,7 @@ const App = ({ Component, pageProps }: AppProps) => {
             content: '#067bc2'
           }
         ]}
+        dangerouslySetAllPagesToNoIndex={true}
       />
       <Layout>
         <Component {...pageProps} />
