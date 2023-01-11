@@ -65,14 +65,6 @@ const App = ({ Component, pageProps }: AppProps) => {
       <Layout>
         <Component {...pageProps} />
       </Layout>
-      <Script strategy="beforeInteractive" src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js" />
-      <Script
-        id="google-webfonts"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `WebFont.load({google:{families:["Montserrat:regular,italic,bold,bolditalic&display=swap"]}})`
-        }}
-      />
       <Script
         id="counter-analytics"
         strategy="afterInteractive"
