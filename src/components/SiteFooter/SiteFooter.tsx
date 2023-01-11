@@ -31,7 +31,7 @@ const SiteFooter = () => (
           <span>
             Monday - Thursday
             <br />
-            9am - 3pm
+            8.45am - 3.45pm
           </span>
         </p>
       </section>
