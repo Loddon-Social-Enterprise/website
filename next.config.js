@@ -1,5 +1,9 @@
 /** @type {import('next').NextConfig} */
-const isProd = process.env.NODE_ENV === 'production';
+const {
+  PHASE_DEVELOPMENT_SERVER
+} = require('next/constants')
+
+const env = phase === PHASE_DEVELOPMENT_SERVER ? 'development' : 'production';
 
 module.exports = {
   images: {
@@ -8,6 +12,9 @@ module.exports = {
   },
   reactStrictMode: true,
   poweredByHeader: false,
+  env: {
+    NEXT_PUBLIC_ENV: env
+  },
   async redirects() {
     return [
       {
