@@ -1,11 +1,5 @@
 /** @type {import('next').NextConfig} */
-const {
-  PHASE_DEVELOPMENT_SERVER
-} = require('next/constants')
-
-module.exports = (phase) => {
-  const env = phase === PHASE_DEVELOPMENT_SERVER ? 'development' : 'production';
-
+module.exports = () => {
   return {
     images: {
       loader: 'akamai',
@@ -13,9 +7,6 @@ module.exports = (phase) => {
     },
     reactStrictMode: true,
     poweredByHeader: false,
-    env: {
-      NEXT_PUBLIC_ENV: env
-    },
     async redirects() {
       return [
         {
