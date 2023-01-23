@@ -36,7 +36,7 @@
     "@types/react": "17.0.34",
     "@types/react-leaflet": "^2.8.2",
     "autoprefixer": "^10.4.13",
-    "contentful": "^9.2.5",
+    "contentful": "^9.2.19",
     "eslint": "8",
     "eslint-config-next": "13.1.2",
     "graphql-request": "^5.1.0",
