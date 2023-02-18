@@ -1,0 +1,10 @@
+@use 'src/styles/variables';
+
+.alert {
+  width: 100%;
+  padding: variables.$base-spacing;
+  margin-top: -(variables.$base-spacing);
+  margin-bottom: calc(variables.$base-spacing * 3);
+  border-radius: variables.$border-radius;
+  background-color: variables.$color-brand-yellow;
+}

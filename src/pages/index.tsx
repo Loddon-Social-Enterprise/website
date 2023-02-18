@@ -5,6 +5,7 @@ import { NextSeo } from 'next-seo';
 import React from 'react';
 import { getHomepage } from 'src/api/queries';
 import { IHomepageFields } from 'src/types/contentful';
+import { Alert } from 'src/components/Alert';
 import { CalloutQuote } from 'src/components/CalloutQuote';
 import ellipseServiceHighlight from 'public/images/ellipse-service-highlight.svg';
 import styles from 'src/styles/pages/index.module.scss';
@@ -19,7 +20,7 @@ const Home: NextPage<Props> = ({ content: { pageTitle, mainContentBody, calloutQ
       <NextSeo title={pageTitle} />
 
       {alertMessage && alertMessage.json && (
-        <div className={styles.alert}>{mainContentBody && documentToReactComponents(alertMessage.json)}</div>
+        <Alert>{mainContentBody && documentToReactComponents(alertMessage.json)}</Alert>
       )}
 
       <div className={styles.homepageLayout}>
