@@ -37,7 +37,7 @@ const NavBar = () => {
   }, [hasRequestedReducedMotion]);
 
   return (
-    <nav role="navigation" className={styles.navBar}>
+    <nav className={styles.navBar}>
       <ul className={classnames([styles.inner, isResponsiveMenuExpanded && styles.isExpanded])}>
         {Object.entries(links).map(([title, href]) => (
           <li className={classnames([styles.navItem, pathname.endsWith(href) && styles.currentNavItem])} key={href}>
