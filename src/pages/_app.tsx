@@ -5,6 +5,8 @@ import { DefaultSeo } from 'next-seo';
 import React, { useEffect } from 'react';
 import '../styles/globals.scss';
 
+const accentColor = '#067bc2';
+
 const App = ({ Component, pageProps }: AppProps) => {
   useEffect(() => {
     console.log(`/**\n * Contribute and fork on Github \n * https://github.com/loddon-social-enterprise/website\n */`);
@@ -35,7 +37,7 @@ const App = ({ Component, pageProps }: AppProps) => {
           {
             rel: 'mask-icon',
             href: '/safari-pinned-tab.svg',
-            color: '#067bc2'
+            color: accentColor
           },
           {
             rel: 'manifest',
@@ -57,7 +59,7 @@ const App = ({ Component, pageProps }: AppProps) => {
           },
           {
             name: 'msapplication-TileColor',
-            content: '#067bc2'
+            content: accentColor
           }
         ]}
       />
