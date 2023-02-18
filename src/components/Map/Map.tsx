@@ -20,8 +20,9 @@ const Map: FunctionComponent<Props> = ({
   className,
   children
 }) => {
+  const latOffset = 0.00045;
   const mapCenter = {
-    lat: latLng.lat + 0.00045 * zoom,
+    lat: latLng.lat + latOffset * zoom,
     lng: latLng.lng
   };
 
