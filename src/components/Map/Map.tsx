@@ -53,7 +53,9 @@ const AddressMarker: FunctionComponent<MarkerProps> = ({ children, ...props }) =
       if (markerRef.current !== null && !markerRef.current.isPopupOpen()) {
         markerRef.current.openPopup();
       }
-    } catch (error) {}
+    } catch (error) {
+      console.error(error);
+    }
   }, []);
 
   return (
