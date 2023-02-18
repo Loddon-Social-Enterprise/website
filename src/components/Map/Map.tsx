@@ -1,5 +1,5 @@
 import classnames from 'classnames';
-import { icon, LatLngLiteral } from 'leaflet';
+import { icon, LatLngLiteral, Marker as MarkerType } from 'leaflet';
 import React, { FunctionComponent, useEffect, useRef } from 'react';
 import { MapContainer, Marker, MarkerProps, Popup, TileLayer } from 'react-leaflet';
 import markerIcon from 'public/images/map-pointer.svg';
@@ -37,7 +37,7 @@ const Map: FunctionComponent<Props> = ({
 };
 
 const AddressMarker: FunctionComponent<MarkerProps> = ({ children, ...props }) => {
-  const markerRef = useRef(null);
+  const markerRef = useRef<MarkerType>(null);
 
   var iconOpts = icon({
     iconUrl: markerIcon.src,
@@ -49,9 +49,7 @@ const AddressMarker: FunctionComponent<MarkerProps> = ({ children, ...props }) =
 
   useEffect(() => {
     try {
-      // @ts-ignore
       if (markerRef.current !== null && !markerRef.current.isPopupOpen()) {
-        // @ts-ignore
         markerRef.current.openPopup();
       }
     } catch (error) {}
