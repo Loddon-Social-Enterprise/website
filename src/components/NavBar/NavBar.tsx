@@ -44,8 +44,8 @@ const NavBar = () => {
             {pathname.endsWith(href) ? (
               <span onClick={closeMenuAndScroll}>{title}</span>
             ) : (
-              <Link href={href} passHref>
-                <a onClick={closeMenuAndScroll}>{title}</a>
+              <Link href={href} onClick={closeMenuAndScroll}>
+                {title}
               </Link>
             )}
           </li>

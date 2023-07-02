@@ -20,7 +20,7 @@ function renderOptions(): Options {
         return (
           <>
             {content.length > 0 && (
-              <Link href={data.uri} passHref>
+              <Link href={data.uri}>
                 {content[0]}
               </Link>
             )}

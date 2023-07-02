@@ -6,8 +6,8 @@ import styles from './Layout.module.scss';
 
 const Layout = ({ children }: { children: ReactChild }) => (
   <>
-    <Link href="#main" passHref>
-      <a className={styles.skipToContent}>Skip to content</a>
+    <Link href="#main" className={styles.skipToContent}>
+      Skip to content
     </Link>
     <div className={styles.layoutWrapper}>
       <SiteHeader />
