@@ -14,9 +14,7 @@ const Layout = ({ children }: { children: ReactNode }) => (
       <main id="main" className={styles.main}>
         {children}
       </main>
-      <Suspense fallback={<div>Loading</div>}>
-        <SiteFooter />
-      </Suspense>
+      <SiteFooter />
     </div>
   </>
 );
