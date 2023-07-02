@@ -1,3 +1,5 @@
+'use client';
+
 import classnames from 'classnames';
 import { icon, LatLngLiteral, Marker as MarkerType } from 'leaflet';
 import React, { FunctionComponent, useEffect, useRef } from 'react';
