@@ -23,7 +23,7 @@ export const getGenericPage = async (slug: string, variables = null) => {
   return data.pageCollection.items[0];
 };
 
-export const getHomepage = async (variables = null) => {
+export const getHomepage = async () => {
   const query = `query($preview: Boolean){
     homepageCollection(limit: 1, preview: $preview) {
       items {
@@ -49,7 +49,7 @@ export const getHomepage = async (variables = null) => {
   return data.homepageCollection.items[0];
 };
 
-export const getContactPage = async (variables = null) => {
+export const getContactPage = async () => {
   const query = `query($preview: Boolean){
     contactPageCollection(limit: 1, preview: $preview) {
       items {
@@ -71,4 +71,29 @@ export const getContactPage = async (variables = null) => {
   });
 
   return data.contactPageCollection.items[0];
+};
+
+export const getSiteFooter = async () => {
+  const query = `query($preview: Boolean){
+    footerCollection(limit: 1, where: { slug: "footer" }, preview: $preview) {
+      items {
+        sys {
+          id
+        }
+        registrations {
+          json
+        }
+        contacts {
+          json
+        }
+      }
+    }
+  }`;
+
+  const data = await request({
+    query,
+    variables: {}
+  });
+
+  return data.footerCollection.items[0];
 };

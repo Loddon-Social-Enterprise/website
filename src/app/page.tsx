@@ -1,4 +1,5 @@
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import { Metadata } from 'next';
 import Image from 'next/image';
 import React from 'react';
 import { getHomepage } from 'src/api/queries';
@@ -6,6 +7,10 @@ import { Alert } from 'src/components/Alert';
 import { CalloutQuote } from 'src/components/CalloutQuote';
 import ellipseServiceHighlight from 'public/images/ellipse-service-highlight.svg';
 import styles from 'src/styles/pages/index.module.scss';
+
+export const metadata: Metadata = {
+  title: 'Welcome | Loddon Social Enterprise'
+};
 
 export default async function Page() {
   const content = await getHomepage();

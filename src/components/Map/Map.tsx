@@ -2,12 +2,12 @@
 
 import classnames from 'classnames';
 import { icon, LatLngLiteral, Marker as MarkerType } from 'leaflet';
-import React, { FunctionComponent, useEffect, useRef } from 'react';
+import React, { FunctionComponent, PropsWithChildren, useEffect, useRef } from 'react';
 import { MapContainer, Marker, MarkerProps, Popup, TileLayer } from 'react-leaflet';
 import markerIcon from 'public/images/map-pointer.svg';
 import styles from './Map.module.scss';
 
-interface Props {
+interface Props extends PropsWithChildren {
   latLng?: LatLngLiteral;
   zoom?: number;
   className?: string;

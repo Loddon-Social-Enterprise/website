@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ReactNode } from 'react';
+import { ReactNode, Suspense } from 'react';
 import { SiteFooter } from 'src/components/SiteFooter';
 import { SiteHeader } from 'src/components/SiteHeader';
 import styles from './Layout.module.scss';
@@ -14,7 +14,9 @@ const Layout = ({ children }: { children: ReactNode }) => (
       <main id="main" className={styles.main}>
         {children}
       </main>
-      <SiteFooter />
+      <Suspense fallback={<div>Loading</div>}>
+        <SiteFooter />
+      </Suspense>
     </div>
   </>
 );
