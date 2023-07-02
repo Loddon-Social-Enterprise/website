@@ -28,4 +28,8 @@
   @include media.tablet {
     max-width: 320px;
   }
+
+  img {
+    margin-bottom: variables.$base-spacing;
+  }
 }

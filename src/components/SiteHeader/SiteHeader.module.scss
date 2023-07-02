@@ -12,6 +12,7 @@
   }
 
   &::before {
+    pointer-events: none;
     opacity: 0.2;
     content: "";
     position: absolute;
@@ -46,7 +47,7 @@
   align-self: center;
   justify-content: center;
   max-width: variables.$max-page-width;
-  margin-bottom: calc(variables.$base-spacing / 2);
+  margin-bottom: variables.$base-spacing;
   padding: 0 calc(variables.$base-spacing * 2);
 
   @include media.handheld-large {
