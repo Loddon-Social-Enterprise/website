@@ -1,24 +1,24 @@
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import type { NextPage } from 'next';
+import { Metadata } from 'next';
 import Image from 'next/image';
-import { NextSeo } from 'next-seo';
 import React from 'react';
 import { getHomepage } from 'src/api/queries';
-import { IHomepageFields } from 'src/types/contentful';
 import { Alert } from 'src/components/Alert';
 import { CalloutQuote } from 'src/components/CalloutQuote';
 import ellipseServiceHighlight from 'public/images/ellipse-service-highlight.svg';
 import styles from 'src/styles/pages/index.module.scss';
 
-interface Props {
-  content: IHomepageFields;
-}
+export const metadata: Metadata = {
+  title: 'Welcome | Loddon Social Enterprise'
+};
 
-const Home: NextPage<Props> = ({ content: { pageTitle, mainContentBody, calloutQuote, alertMessage } }) => {
+export default async function Page() {
+  const content = await getHomepage();
+
+  const { mainContentBody, calloutQuote, alertMessage } = content;
+
   return (
     <div>
-      <NextSeo title={pageTitle} />
-
       {alertMessage && alertMessage.json && (
         <Alert>{mainContentBody && documentToReactComponents(alertMessage.json)}</Alert>
       )}
@@ -40,14 +40,4 @@ const Home: NextPage<Props> = ({ content: { pageTitle, mainContentBody, calloutQ
       </div>
     </div>
   );
-};
-
-export async function getStaticProps() {
-  const content = await getHomepage();
-
-  return {
-    props: { content }
-  };
 }
-
-export default Home;

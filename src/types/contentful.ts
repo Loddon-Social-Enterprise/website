@@ -40,3 +40,9 @@ export interface IPartnerListFields {
   };
   testimonial?: RichTextField;
 }
+
+export interface IFooterFields {
+  slug?: Contentful.EntryFields.Symbol;
+  registrations?: RichTextField;
+  contacts?: RichTextField;
+}

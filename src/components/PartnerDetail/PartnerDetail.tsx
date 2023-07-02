@@ -25,7 +25,15 @@ const PartnerDetail = ({ partner: { companyName, description, logo, testimonial 
             {isExpanded ? 'Hide testimonial' : 'Read a testimonial of our work'}
           </button>
           <div className={classnames([styles.testimonial, isExpanded && styles.isExpanded])}>
-            {logo && <Image src={logo.url} alt={companyName} width={logo.width} height={logo.height} unoptimized />}
+            {logo && (
+              <Image
+                src={logo.url}
+                alt={companyName || 'company logo'}
+                width={logo.width}
+                height={logo.height}
+                unoptimized
+              />
+            )}
             {description && documentToReactComponents(testimonial.json)}
           </div>
         </div>

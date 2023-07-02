@@ -1,6 +1,8 @@
+'use client';
+
 import classnames from 'classnames';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
+import { usePathname } from 'next/navigation';
 import { useCallback, useState } from 'react';
 import useReducedMotion from 'src/hooks/useReducedMotion';
 import styles from './NavBar.module.scss';
@@ -15,7 +17,7 @@ const links = {
 };
 
 const NavBar = () => {
-  const { pathname } = useRouter();
+  const pathname = usePathname();
   const [isResponsiveMenuExpanded, setIsResponsiveMenuExpanded] = useState(false);
   const hasRequestedReducedMotion = useReducedMotion();
 
@@ -40,12 +42,12 @@ const NavBar = () => {
     <nav className={styles.navBar}>
       <ul className={classnames([styles.inner, isResponsiveMenuExpanded && styles.isExpanded])}>
         {Object.entries(links).map(([title, href]) => (
-          <li className={classnames([styles.navItem, pathname.endsWith(href) && styles.currentNavItem])} key={href}>
-            {pathname.endsWith(href) ? (
+          <li className={classnames([styles.navItem, pathname?.endsWith(href) && styles.currentNavItem])} key={href}>
+            {pathname?.endsWith(href) ? (
               <span onClick={closeMenuAndScroll}>{title}</span>
             ) : (
-              <Link href={href} passHref>
-                <a onClick={closeMenuAndScroll}>{title}</a>
+              <Link href={href} onClick={closeMenuAndScroll}>
+                {title}
               </Link>
             )}
           </li>

@@ -71,6 +71,6 @@
   line-height: calc(variables.$base-spacing * 2);
 }
 
-.contactDetails {
+.contactDetails p:first-of-type {
   line-height: calc(variables.$base-spacing * 2);
 }
