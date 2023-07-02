@@ -7,7 +7,7 @@ import styles from 'src/styles/pages/page.module.scss';
 interface Context {
   params: {
     slug: string;
-  }
+  };
 }
 
 export async function generateMetadata({ params }: Context) {

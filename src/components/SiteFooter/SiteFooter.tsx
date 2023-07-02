@@ -8,7 +8,7 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
 const SiteFooter = async () => {
   const { registrations, contacts } = await getSiteFooter();
-  
+
   return (
     <footer className={styles.footer}>
       <div className={styles.footerInner}>
@@ -27,7 +27,7 @@ const SiteFooter = async () => {
         </div>
       </div>
     </footer>
-  )
+  );
 };
 
 export { SiteFooter };
