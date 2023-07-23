@@ -1,6 +1,6 @@
 import { request } from './client';
 
-export const getGenericPage = async (slug: string, variables = null) => {
+export const getGenericPage = async (slug: string) => {
   const query = `query($preview: Boolean) {
     pageCollection(limit: 1, where: { slug: "${slug}" }, preview: $preview) {
       items {
@@ -10,6 +10,20 @@ export const getGenericPage = async (slug: string, variables = null) => {
         pageTitle
         body {
           json
+          links {
+            assets {
+              block {
+                sys {
+                  id
+                }
+                url
+                title
+                width
+                height
+                description
+              }
+            }
+          }
         }
       }
     }
