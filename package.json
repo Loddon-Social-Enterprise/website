@@ -27,7 +27,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-leaflet": "^4.2.1",
-    "scss-reset": "^1.2.2"
+    "scss-reset": "^1.4.2"
   },
   "devDependencies": {
     "@contentful/rich-text-react-renderer": "^15.17.0",
