@@ -1,5 +1,6 @@
 import { documentToReactComponents, Options, RenderNode } from '@contentful/rich-text-react-renderer';
 import { BLOCKS, INLINES } from '@contentful/rich-text-types';
+import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import React, { ReactNode } from 'react';
@@ -26,10 +27,8 @@ function renderOptions(links: any): Options {
       },
       [BLOCKS.EMBEDDED_ASSET]: (node, next) => {
         const asset = assetMap.get(node.data.target.sys.id);
-        return (
-          <img src={asset.url} alt="My image alt text" />
-        );
-      },
+        return <Image src={asset.url} alt={asset.description} width={asset.width} height={asset.height} />;
+      }
     }
   };
 }

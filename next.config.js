@@ -2,8 +2,14 @@
 module.exports = () => {
   return {
     images: {
-      loader: 'akamai',
-      path: '.',
+      remotePatterns: [
+        {
+          protocol: 'https',
+          hostname: 'images.ctfassets.net',
+          port: '',
+          pathname: '/msvlzsu3dojq/**',
+        },
+      ],
     },
     reactStrictMode: true,
     poweredByHeader: false,
