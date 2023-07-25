@@ -88,6 +88,7 @@
     margin-bottom: calc(variables.$base-spacing * 2);
 
     @include media.handheld-large {
+      width: auto;
       max-width: 320px;
       margin: 0 calc(variables.$base-spacing * 2) calc(variables.$base-spacing * 2) 0;
     }
