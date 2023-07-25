@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 export default async function Page() {
   const content = await getHomepage();
 
-  const { mainContentBody, calloutQuote, alertMessage } = content;
+  const { mainContentBody, calloutQuote, alertMessage, sidebarImage } = content;
 
   return (
     <div>
@@ -29,7 +29,12 @@ export default async function Page() {
         </section>
         <aside className={styles.asideColumn}>
           <div>
-            <Image src={ellipseServiceHighlight} alt="A smiling Loddon service user working on a project" />
+            <Image
+              src={sidebarImage.url}
+              width={sidebarImage.width}
+              height={sidebarImage.height}
+              alt={sidebarImage.description}
+            />
           </div>
           {calloutQuote && (
             <CalloutQuote>

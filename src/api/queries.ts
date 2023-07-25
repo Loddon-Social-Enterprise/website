@@ -51,6 +51,13 @@ export const getHomepage = async () => {
         alertMessage {
           json
         }
+        sidebarImage {
+          url
+          title
+          width
+          height
+          description
+        }
       }
     }
   }`;
