@@ -2,6 +2,8 @@
 module.exports = () => {
   return {
     images: {
+      loader: 'custom',
+      loaderFile: 'lib/contentful-images.loader.js',
       remotePatterns: [
         {
           protocol: 'https',

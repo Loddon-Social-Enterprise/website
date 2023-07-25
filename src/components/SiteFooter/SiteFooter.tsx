@@ -23,7 +23,13 @@ const SiteFooter = async () => {
         </section>
         <div className={classnames([styles.footerSection, styles.hccLogo])}>
           <h2>Supported by</h2>
-          <Image src={hccLogo} alt="Hampshire County Council logo" title="Hampshire County Council" width={120} />
+          <Image
+            src={hccLogo}
+            alt="Hampshire County Council logo"
+            title="Hampshire County Council"
+            width={120}
+            unoptimized
+          />
         </div>
       </div>
     </footer>

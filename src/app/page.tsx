@@ -34,6 +34,7 @@ export default async function Page() {
               width={sidebarImage.width}
               height={sidebarImage.height}
               alt={sidebarImage.description}
+              unoptimized
             />
           </div>
           {calloutQuote && (
