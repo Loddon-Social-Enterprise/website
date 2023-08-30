@@ -1,7 +1,7 @@
-import { ReactChild } from 'react';
+import { PropsWithChildren } from 'react';
 import styles from './CalloutQuote.module.scss';
 
-const CalloutQuote = ({ children }: { children: ReactChild }) => (
+const CalloutQuote = ({ children }: PropsWithChildren) => (
   <blockquote className={styles.calloutQuote}>{children}</blockquote>
 );
 

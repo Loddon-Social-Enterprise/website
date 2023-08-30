@@ -5,7 +5,6 @@ import React from 'react';
 import { getHomepage } from 'src/api/queries';
 import { Alert } from 'src/components/Alert';
 import { CalloutQuote } from 'src/components/CalloutQuote';
-import ellipseServiceHighlight from 'public/images/ellipse-service-highlight.svg';
 import styles from 'src/styles/pages/index.module.scss';
 
 export const metadata: Metadata = {
