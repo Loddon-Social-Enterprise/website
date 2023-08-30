@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "prebuild": "node prebuild.js",
+    "prebuild": "node lib/prebuild.js",
     "postbuild": "next-sitemap",
     "export": "next export",
     "start": "next start",
