@@ -8,11 +8,11 @@ import styles from './SiteHeader.module.scss';
 const SiteHeader = () => (
   <header className={styles.header}>
     <div className={styles.smiles} aria-hidden="true">
-      <Image src={smiles} alt="Collection of smiley face emojis" />
+      <Image src={smiles} alt="Collection of smiley face emojis" unoptimized />
     </div>
     <div className={styles.logoWrapper}>
       <Link href="/">
-        <Image src={logo} title="Loddon Social Enterprise" alt="Loddon Social Enterprise logo" />
+        <Image src={logo} title="Loddon Social Enterprise" alt="Loddon Social Enterprise logo" unoptimized />
       </Link>
     </div>
     <NavBar />

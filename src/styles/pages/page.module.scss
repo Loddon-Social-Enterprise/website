@@ -65,4 +65,32 @@
       margin-bottom: variables.$base-spacing;
     }
   }
+
+  hr {
+    clear: both;
+    height: 0;
+  }
+
+  blockquote {
+    display: inline-block;
+    padding: variables.$base-spacing;
+    border-left: 3px solid variables.$color-brand-blue;
+    font-style: italic;
+
+    & p:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  img {
+    float: left;
+    width: 100%;
+    margin-bottom: calc(variables.$base-spacing * 2);
+
+    @include media.handheld-large {
+      width: auto;
+      max-width: 320px;
+      margin: 0 calc(variables.$base-spacing * 2) calc(variables.$base-spacing * 2) 0;
+    }
+  }
 }

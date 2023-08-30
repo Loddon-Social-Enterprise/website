@@ -2,8 +2,16 @@
 module.exports = () => {
   return {
     images: {
-      loader: 'akamai',
-      path: '.',
+      loader: 'custom',
+      loaderFile: 'lib/contentful-images.loader.js',
+      remotePatterns: [
+        {
+          protocol: 'https',
+          hostname: 'images.ctfassets.net',
+          port: '',
+          pathname: '/msvlzsu3dojq/**',
+        },
+      ],
     },
     reactStrictMode: true,
     poweredByHeader: false,
