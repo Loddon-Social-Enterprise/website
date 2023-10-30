@@ -31,7 +31,7 @@
     "scss-reset": "^1.2.2"
   },
   "devDependencies": {
-    "@contentful/rich-text-react-renderer": "^15.17.0",
+    "@contentful/rich-text-react-renderer": "^15.19.0",
     "@contentful/rich-text-types": "^16.0.2",
     "@types/leaflet": "^1.9.3",
     "@types/node": "20.4.4",
